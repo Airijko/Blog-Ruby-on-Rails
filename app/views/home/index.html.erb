@@ -26,7 +26,9 @@
             </div>
           </div>
           <%= text_field_tag :query, nil, placeholder: "Search...", class: "flex-grow bg-gray-100 px-4 py-2 text-gray-700 focus:outline-none" %>
-          <%= image_submit_tag("icons8-search-50.png", class: "w-24 bg-gray-100 h-auto rounded-r-md px-4 py-2 hover:bg-blue-600") %>
+          <%= button_tag(class: "rounded-r-md px-4 py-2 bg-gray-100") do %>
+            <%= image_tag("magnify_glass.svg", class: "h-8 w-8 hover:h-10 hover:w-10 transform duration-200") %>
+          <% end %>
         <% end %>
         <%= image_tag('honorlvl1.png', class: 'rounded-lg')%>
       </div>
