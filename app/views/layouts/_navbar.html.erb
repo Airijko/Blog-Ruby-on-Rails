@@ -1,18 +1,17 @@
-<nav class="bg-gray-800">
-  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-    <div class="relative flex items-center justify-between h-16">
-      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-        <div class="flex-shrink-0 flex items-center">
-          <a href="#" class="text-white text-2xl font-bold">MyApp</a>
-        </div>
-        <div class="hidden sm:block sm:ml-6">
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-          </div>
-        </div>
-      </div>
+<nav class="bg-gray-900 w-full px-5">
+  <div class="flex items-center justify-between h-16">
+    <%= link_to root_path,class: 'flex flex-row justify-center items-center gap-2' do %>
+      <%= image_tag('star.svg', class: 'h-[30px] w-auto') %>
+      <span class="font-bold text-3xl whitespace-nowrap">Rate That Player</span>
+    <% end %>
+    <div class="flex flex-grow justify-center gap-12">
+      <a href="/reviews" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gamer Reviews</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leaderboards</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Discord</a>
+    </div>
+    <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center">
+      <%= image_tag('signin.svg', class: 'h-[20px] w-auto') %>
+      <span class="text-sm">Sign In</span>
     </div>
   </div>
 </nav>

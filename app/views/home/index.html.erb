@@ -1,9 +1,38 @@
-<div class="min-h-screen bg-gray-200 py-6 flex flex-col justify-center sm:py-12">
-  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-    <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-light-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-      <h1 class="font-bold text-4xl mb-4">Home#index</h1>
-      <p class="text-gray-600">Find me in app/views/home/index.html.erb</p>
+<div class=" home-background h-screen">
+  <div class="container flex flex-col justify-center items-center gap-5 my-[100px]">
+    <div class="grid md:grid-cols-2 gap-[100px] w-full">
+      <div class="flex flex-row justify-between items-center whitespace-nowrap w-full">
+        <div class="flex flex-col">
+          <h1 class="text-4xl">Rate That Player</h1>
+          <span class="text-sm text-gray-200">we ain't getting chat restricted with this one</span>
+        </div>
+        <%= image_tag('league-of-legends.png', class: 'h-[70px] w-auto') %>
+      </div>
+      <div class="flex flex-col h-full">
+        <h1 class="text-3xl mt-auto">Recent Player Reviews</h1>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-[100px]">
+      <div class="flex flex-col gap-5">
+        <%= form_with url: "/search", method: "get", local: true, class: "flex justify-center" do %>
+          <div class="flex flex-row relative bg-gray-100 rounded-l-md px-5 py-2">
+            <div class="flex flex-col text-gray-700 focus:outline-none focus:border-blue-500">
+              <label for="regions" class="text-sm font-medium text-gray-700">region</label>
+              <select class="text-gray-600 h-10 pr-2 focus:outline-none bg-transparent">
+                <% @options.each do |region| %>
+                  <option><%= region %></option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+          <%= text_field_tag :query, nil, placeholder: "Search...", class: "flex-grow bg-gray-100 px-4 py-2 text-gray-700 focus:outline-none" %>
+          <%= image_submit_tag("icons8-search-50.png", class: "w-24 bg-gray-100 h-auto rounded-r-md px-4 py-2 hover:bg-blue-600") %>
+        <% end %>
+        <%= image_tag('honorlvl1.png', class: 'rounded-lg')%>
+      </div>
+      <div class="flex flex-col gap-5">
+        <%= render 'posts' %>
+      </div>
     </div>
   </div>
 </div>
