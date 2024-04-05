@@ -6,10 +6,11 @@
           <h1 class="text-4xl">Rate That Player</h1>
           <span class="text-sm text-gray-200">we ain't getting chat restricted with this one</span>
         </div>
-        <%= image_tag('league-of-legends.png', class: 'h-[70px] w-auto') %>
+        <%= image_tag('league-of-legends.png', class: 'h-[70px] w-auto hover:scale-105 transition duration-200') %>
       </div>
-      <div class="flex flex-col h-full">
+      <div class="flex flex-row h-full hover:scale-105 transition duration-200 gap-2">
         <h1 class="text-3xl mt-auto">Recent Player Reviews</h1>
+         <%= image_tag('pen-review.svg', class: 'h-[40px] w-auto mt-auto') %>
       </div>
     </div>
     <div class="grid md:grid-cols-2 gap-[100px]">
@@ -30,7 +31,7 @@
             <%= image_tag("magnify_glass.svg", class: "h-8 w-8 hover:h-10 hover:w-10 transform duration-200") %>
           <% end %>
         <% end %>
-        <%= image_tag('honorlvl1.png', class: 'rounded-lg')%>
+        <%= image_tag('honorlvl1.png', class: 'rounded-lg hover:scale-105 transition duration-200')%>
       </div>
       <div class="flex flex-col gap-5">
         <%= render 'posts' %>

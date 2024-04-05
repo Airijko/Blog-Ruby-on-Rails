@@ -22,35 +22,10 @@
 @layer base {
   body {
     @apply w-full justify-center items-center font-sans bg-n-8 text-n-1 text-base;
-    background-image: url('background.svg');
+    background-image: linear-gradient(rgba(0, 9, 47, 0.7), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
-}
-
-.home-background {
-  background-image: linear-gradient(rgba(0, 11, 57, 0.5), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-nav {
-  position: relative;
-  isolation: isolate;
-}
-
-nav::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('nav.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(20%);
-  z-index: -1;
 }
 
 .player-form {

@@ -1,15 +1,15 @@
-<nav class="bg-gray-900 w-full px-5">
+<nav class="w-full px-5 bg-n-8/50 border-b border-gray-700">
   <div class="flex items-center justify-between h-16">
     <%= link_to root_path,class: 'flex flex-row justify-center items-center gap-2' do %>
       <%= image_tag('star.svg', class: 'h-[30px] w-auto') %>
       <span class="font-bold text-3xl whitespace-nowrap">Rate That Player</span>
     <% end %>
     <div class="flex flex-grow justify-center gap-12">
-      <a href="/reviews" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gamer Reviews</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leaderboards</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Discord</a>
+      <a href="/reviews" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Gamer Reviews</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Leaderboards</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Discord</a>
     </div>
-    <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center">
+    <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center hover:bg-blue-900 transition duration-200">
       <%= image_tag('signin.svg', class: 'h-[20px] w-auto') %>
       <span class="text-sm">Sign In</span>
     </div>

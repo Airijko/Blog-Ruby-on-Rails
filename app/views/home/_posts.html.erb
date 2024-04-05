@@ -1,6 +1,6 @@
 <div class="flex flex-wrap items-center w-full gap-5">
   <% @post_forms.each do |post_form| %>
-    <div class="min-w-64 max-w-2xl bg-white rounded-xl shadow-md hover:scale-105 transform duration-200">
+    <div class="w-full bg-white rounded-xl shadow-md hover:scale-105 transform duration-200">
       <div class="p-8">
         <h2 class="text-lg leading-tight font-medium text-black"><%= post_form.description %></h2>
         <div class="mt-1 uppercase tracking-wide text-sm text-indigo-500 font-semibold"><%= post_form.tags %></div>
