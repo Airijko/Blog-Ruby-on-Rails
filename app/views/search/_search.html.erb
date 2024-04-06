@@ -3,9 +3,9 @@
     <div class="flex flex-row relative bg-gray-100 rounded-l-md px-5 py-2">
       <div class="flex flex-col text-gray-700 focus:outline-none focus:border-blue-500">
         <label for="regions" class="text-sm font-medium text-gray-700">region</label>
-        <select class="w-[50px] text-gray-600 h-10 pr-2 focus:outline-none bg-transparent">
-          <% @options.each do |region| %>
-            <option><%= region %></option>
+        <select class="w-[75px] text-gray-600 h-10 pr-2 focus:outline-none bg-transparent" name="region">
+          <% @regions.each do |key, value| %>
+            <option value="<%= key %>"><%= value %></option>
           <% end %>
         </select>
       </div>
