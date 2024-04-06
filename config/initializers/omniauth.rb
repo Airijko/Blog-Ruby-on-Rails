@@ -1,11 +1,5 @@
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :developer if Rails.env.development?
+require 'omniauth/strategies/riot_games'
 
-  provider(
-    :riotgames,
-    Rails.application.credentials.dig(:riotgames, :client_id),
-        Rails.application.credentials.dig(:riotgames, :client_secret),
-    callback_path: '/auth/riotgames/callback'
-    scope: 'openid',
-  )
+Rails.application.config.middleware.use OmniAuth::Builder do
+    provider :riot_games, ENV['RIOT_GAMES_CLIENT_ID'], ENV['RIOT_GAMES_CLIENT_SECRET']
 end

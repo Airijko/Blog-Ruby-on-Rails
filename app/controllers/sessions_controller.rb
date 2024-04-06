@@ -2,9 +2,10 @@ class SessionsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: :create
 
     def create
-        user_info = request.env['omniauth.auth']
-        binding.pry
+        auth = request.env['omniauth.auth']
+        logger.debug "Omniauth auth hash: #{auth.inspect}"
 
-        render json: user_info
+        # binding.pry
+        # render json: auth
     end
 end

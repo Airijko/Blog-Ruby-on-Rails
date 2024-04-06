@@ -14,5 +14,10 @@
         <button type='submit'>Login with Developer</button>
       <% end %>
     </div>
+    <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center hover:bg-blue-900 transition duration-200">
+      <%= form_tag('/auth/riot_games', method: 'post', data: {turbo: false}) do %>
+        <button type='submit'>Login with Riotgames</button>
+      <% end %>
+    </div>
   </div>
 </nav>
