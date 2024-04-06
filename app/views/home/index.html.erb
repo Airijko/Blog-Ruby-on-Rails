@@ -4,29 +4,19 @@
       <div class="flex flex-col items-center whitespace-nowrap w-full gap-5 mt-auto">
         <div class="flex justify-between w-full">
           <div class="flex flex-col mt-auto">
-            <h1 class="text-4xl">Rate That Player</h1>
+            <h1 class="text-4xl">
+              <span class="text-amber-400 font-bold">Rate </span>That Player</h1>
             <span class="text-sm text-gray-200">we ain't getting chat restricted with this one</span>
           </div>
           <%= image_tag('league-of-legends.png', class: 'h-[70px] w-auto hover:scale-105 transition duration-200') %>
         </div>
-        <div class="flex flex-col gap-5 w-full">
-          <%= form_with url: "/search", method: "get", local: true, class: "flex justify-center" do %>
-            <div class="flex flex-row relative bg-gray-100 rounded-l-md px-5 py-2">
-              <div class="flex flex-col text-gray-700 focus:outline-none focus:border-blue-500">
-                <label for="regions" class="text-sm font-medium text-gray-700">region</label>
-                <select class="w-[50px] text-gray-600 h-10 pr-2 focus:outline-none bg-transparent">
-                  <% @options.each do |region| %>
-                    <option><%= region %></option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-            <%= text_field_tag :query, nil, placeholder: "Search...", class: "flex-grow bg-gray-100 px-4 py-2 text-gray-700 focus:outline-none" %>
-            <%= button_tag(class: "rounded-r-md px-4 py-2 bg-gray-100") do %>
-              <%= image_tag("magnify_glass.svg", class: "h-8 w-8 hover:h-10 hover:w-10 transform duration-200") %>
-            <% end %>
-          <% end %>
-        </div>
+        <%= render 'search/search'%>
+        <% if @player %>
+          <p>Player name: <%= @player['gameName'] %></p>
+          <p>Tag line: <%= @player['tagLine'] %></p>
+        <% else %>
+          <p>No player data found.</p>
+        <% end %>
       </div>
       <%= image_tag('Honor_Level_0.png', class: 'h-[200px] w-auto flex flex-grow  rounded-lg hover:scale-105 transition duration-200')%>
     </div>
