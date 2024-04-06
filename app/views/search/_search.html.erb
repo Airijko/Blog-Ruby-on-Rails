@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-5 w-full">
+  <%= form_with url: search_path, method: "get", local: true, class: "flex justify-center" do %>
+    <div class="flex flex-row relative bg-gray-100 rounded-l-md px-5 py-2">
+      <div class="flex flex-col text-gray-700 focus:outline-none focus:border-blue-500">
+        <label for="regions" class="text-sm font-medium text-gray-700">region</label>
+        <select class="w-[50px] text-gray-600 h-10 pr-2 focus:outline-none bg-transparent">
+          <% @options.each do |region| %>
+            <option><%= region %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <%= text_field_tag :gameName, nil, placeholder: "Summoner Name", class: "flex flex-grow bg-gray-100 px-4 py-2 text-gray-700 focus:outline-none", maxlength: 50 %>
+    <%= text_field_tag :tagLine, nil, placeholder: "Tag", class: "w-[100px] bg-gray-100 px-4 py-2 border-l border-gray-300 text-gray-700 focus:outline-none", maxlength: 5 %>
+    <%= button_tag(class: "rounded-r-md px-4 py-2 bg-gray-100") do %>
+      <%= image_tag("magnify_glass.svg", class: "h-8 w-8 hover:h-10 hover:w-10 transform duration-200") %>
+    <% end %>
+  <% end %>
+</div>

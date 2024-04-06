@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/reviews', to: 'reviews#index'
   get '/reviews/new', to: 'reviews#new'
   post '/reviews/new', to: 'reviews#create'
+
+  get '/search', to: 'search#index'
 end
