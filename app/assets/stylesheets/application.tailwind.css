@@ -22,10 +22,20 @@
 @layer base {
   body {
     @apply w-full justify-center items-center font-sans bg-n-8 text-n-1 text-base;
-    background-image: linear-gradient(rgba(0, 9, 47, 0.7), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
+}
+
+.home-background {
+  background-image: linear-gradient(rgba(0, 9, 47, 0.7), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-background {
+  background-color: #26284d;
+  background-image: url('wavesbg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .player-form {
