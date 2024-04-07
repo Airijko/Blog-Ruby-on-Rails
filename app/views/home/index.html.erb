@@ -11,12 +11,6 @@
           <%= image_tag('league-of-legends.png', class: 'h-[70px] w-auto hover:scale-105 transition duration-200') %>
         </div>
         <%= render 'search/search'%>
-        <% if @player %>
-          <p>Player name: <%= @player['gameName'] %></p>
-          <p>Tag line: <%= @player['tagLine'] %></p>
-        <% else %>
-          <p>No player data found.</p>
-        <% end %>
       </div>
       <%= image_tag('Honor_Level_0.png', class: 'h-[200px] w-auto flex flex-grow  rounded-lg hover:scale-105 transition duration-200')%>
     </div>
