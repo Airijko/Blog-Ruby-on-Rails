@@ -3,6 +3,8 @@ require 'uri'
 
 class SearchController < ApplicationController
   def index
+    region = params[:region]
+    session[:region] = params[:region]
     game_name = params[:gameName]
     tag_line = params[:tagLine]
     client_secret = ENV['RIOT_GAMES_CLIENT_SECRET']
@@ -13,12 +15,12 @@ class SearchController < ApplicationController
 
     if response.is_a?(Net::HTTPSuccess)
       session[:player] = JSON.parse(response.body)
-      logger.info "Player data: #{session[:player]}"
+      logger.info "Player name: #{session[:player]['gameName']}"
     else
       session[:player] = nil
-      logger.warn "No player found for game name: #{game_name} and tag line: #{tag_line}"
+      logger.warn "No player found for: #{game_name} and tag line: #{tag_line}"
     end
 
-    redirect_to root_path
+    redirect_to summoner_path(region: region, game_name: game_name, tag: tag_line)  
   end
 end

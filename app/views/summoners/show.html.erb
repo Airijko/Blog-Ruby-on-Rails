@@ -1,0 +1,16 @@
+<div class="flex flex-col justify-center items-center h-screen">
+  <pre><%= @player_data.to_json %></pre>
+  <pre><%= @summoner_data.to_json %></pre>
+  <div class="pt-10">
+    <div class="relative">
+      <small class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3/4 text-xs py-1 px-2 border border-amber-400 rounded-md bg-gray-900 z-1"><%= @summoner_data['summonerLevel']%></small>
+      <div class=" border-2 border-amber-400 bg-amber-400 rounded-xl">
+        <%= image_tag(@profile_icon_id, class: "w-36 shadow-[0px_0px_3px_1px_rgba(0,0,0,0.75)] rounded-xl")%>
+      </div>
+    </div>
+  </div>
+  <h1 class="flex flex-row gap-1">
+    <span><%= @player_data['gameName']%> </span>
+    <span class="text-gray-700">#<%= @player_data['tagLine']%></span>
+  </h1>
+</div>

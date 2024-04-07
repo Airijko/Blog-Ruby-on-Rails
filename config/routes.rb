@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/reviews/new', to: 'reviews#create'
 
   get '/search', to: 'search#index'
+  get '/summoners/:region/:game_name-:tag', to: 'summoners#show', as: 'summoner'
 end
