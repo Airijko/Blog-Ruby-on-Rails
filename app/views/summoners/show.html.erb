@@ -1,16 +1,95 @@
-<div class="flex flex-col justify-center items-center h-screen">
-  <pre><%= @player_data.to_json %></pre>
-  <pre><%= @summoner_data.to_json %></pre>
-  <div class="pt-10">
-    <div class="relative">
+<div class="container flex flex-col justify-center items-center my-[100px] gap-4">
+  <section class="header-background flex flex-row gap-5 pt-10 pb-2 px-2 justify-start w-full">
+    <%# COL 1 %>
+    <div class="relative w-32">
       <small class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3/4 text-xs py-1 px-2 border border-amber-400 rounded-md bg-gray-900 z-1"><%= @summoner_data['summonerLevel']%></small>
-      <div class=" border-2 border-amber-400 bg-amber-400 rounded-xl">
-        <%= image_tag(@profile_icon_id, class: "w-36 shadow-[0px_0px_3px_1px_rgba(0,0,0,0.75)] rounded-xl")%>
+      <div class="flex flex-grow-0  border-2 border-amber-400 bg-amber-400 rounded-xl">
+        <%= image_tag(@profile_icon_id, class: "shadow-[0px_0px_3px_1px_rgba(0,0,0,0.75)] rounded-xl")%>
       </div>
     </div>
-  </div>
-  <h1 class="flex flex-row gap-1">
-    <span><%= @player_data['gameName']%> </span>
-    <span class="text-gray-700">#<%= @player_data['tagLine']%></span>
-  </h1>
+    <%# COL 2 %>
+    <div class="flex flex-col">
+      <h1 class="flex text-4xl flex-row gap-1">
+        <span><%= @player_data['gameName']%> </span>
+        <span class="text-gray-700">#<%= @player_data['tagLine']%></span>
+      </h1>
+      <small class="text-slate-200">Ladder Rank: NULL (NULL)</small>
+      <div class="mt-auto mb-1">
+        <button class="flex flex-row justify-center items-center px-5 py-2 rounded-md bg-amber-400 text-gray-100">
+          <%= image_tag('update.svg', class: "w-7")%>
+          <span>Update</span>
+        </button>
+      </div>
+    </div>
+    <%# COL 3 %>
+    <div class="flex flex-col justify-between ml-auto mt">
+      <h3>
+        <span>RATING</span>
+        <span class="text-amber-400">NULL</span>
+        <div>{STARS OUT OF 10}</div>
+      </h3>
+      <button>WRITE A REVIEW</button>
+    </div>
+  </section>
+  <section class="flex flex-row gap-5 grid grid-cols-[450px_auto] w-full">
+    <%# Col 1 %>
+    <div class="w-full">
+      <div class="flex flex-col gap-5">
+        <div class="section-background-light flex justify-start items-center w-full bg-gray-700 p-5">
+          <div class="flex flex-col items-start w-full">
+            <h3 class="border-l-4 border-blue-500 pl-2">Ranked Solo</h3>
+            <div class='flex flex-row items-center gap-2 w-full'>
+              <%= image_tag('ranks/Rank=Gold.png', class: "w-[100px]")%>
+              <div class="flex flex-col">
+                <span>RANK</span>
+                <span>LP</span>
+              </div>
+              <div class="flex flex-col ml-auto">
+                <span>W / L</span>
+                <span>Win Ratio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-background-light flex flex-col justify-center items-center w-full bg-gray-700 p-5">
+          <ul class="flex flex-row justify-center flex-wrap gap-x-5 gap-y-2">
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+            <%= render 'tags'%>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h3 class="header-background-dark flex justify-start items-center w-full px-5">
+            <span class="border-l-4 border-amber-500 pl-2">Overview</span>
+          </h3>
+          <div class="section-background-light flex flex-col gap-2 p-5">
+            <div class="h-50">RATE Graphs #LATER FEATURE</div>
+          </div>
+        </div>
+        <div class="section-background-light  flex flex-col gap-[1px]">
+          <div class="flex justify-start items-center w-full px-5 py-3">
+            <h3 class="border-l-4 border-blue-500 pl-2">Recent Games</h3>
+          </div>
+          <%= render 'game'%>
+          <%= render 'game'%>
+        </div>
+      </div>
+    </div>
+    <%# Col 2 %>
+    <div class="flex flex-col gap-[1px]">
+      <h3 class="header-background-dark flex justify-start items-center w-full px-5">
+        <span class="border-l-4 border-amber-500 pl-2">Reviews</span>
+      </h3>
+      <div class="section-background flex flex-col gap-2 p-5">
+        <%= render 'review'%>
+        <%= render 'review'%>
+      </div>
+    </div>
+  </section>
 </div>

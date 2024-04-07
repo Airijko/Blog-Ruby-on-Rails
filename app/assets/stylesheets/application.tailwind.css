@@ -25,15 +25,41 @@
   }
 }
 
+.header-background {
+  background-image: linear-gradient(rgba(0, 9, 47, 0.7), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 .home-background {
   background-image: linear-gradient(rgba(0, 9, 47, 0.7), rgba(0, 0, 0, 0.5)), url('Aatrox_Splash_2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.header-background-dark {
+  @apply bg-[#141629] rounded-md py-3;
+}
+
+.section-background {
+  @apply bg-[#15172b] rounded-md;
+}
+
+.section-background-light {
+  @apply bg-[#191c34] rounded-md;
+}
+
 .card-background {
   background-color: #26284d;
   background-image: url('wavesbg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.review-background {
+  background-color: #1a1d35;
+  background-image: url('wavesbg2.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
