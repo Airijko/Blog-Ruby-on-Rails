@@ -10,8 +10,10 @@
       <a href="#" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Discord</a>
     </div>
     <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center hover:bg-blue-900 transition duration-200">
-      <%= form_tag('/auth/developer', method: 'post', data: {turbo: false}) do %>
-        <button type='submit'>Sign In</button>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", sign_out_path, method: :get %>
+      <% else %>
+        <%= link_to "Sign in", user_google_oauth2_omniauth_authorize_path, data: { turbo: false } %>
       <% end %>
     </div>
   </div>

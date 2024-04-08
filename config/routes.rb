@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  post "/auth/:provider/callback", to: "sessions#create"
-  get "/auth/:provider/callback", to: "sessions#create"
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  get "sign_out", to: "application#sign_out_user"
 
   root "home#index"
 
