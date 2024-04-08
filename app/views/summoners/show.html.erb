@@ -1,4 +1,4 @@
-<div class="container flex flex-col justify-center items-center my-[100px] gap-4">
+<div class="container flex flex-col justify-center items-center my-[50px] gap-4">
   <section class="header-background flex flex-row gap-5 pt-10 pb-2 px-2 justify-start w-full">
     <%# COL 1 %>
     <div class="relative w-32">
@@ -76,18 +76,16 @@
           <div class="flex justify-start items-center w-full px-5 py-3">
             <h3 class="border-l-4 border-blue-500 pl-2">Recent Games</h3>
           </div>
-          <%= render 'game'%>
-          <%= render 'game'%>
+          <%= render 'matches'%>
         </div>
       </div>
     </div>
     <%# Col 2 %>
-    <div class="flex flex-col gap-[1px]">
+    <div class="flex flex-col gap-[2px]">
       <h3 class="header-background-dark flex justify-start items-center w-full px-5">
         <span class="border-l-4 border-amber-500 pl-2">Reviews</span>
       </h3>
-      <div class="section-background flex flex-col gap-2 p-5">
-        <%= render 'review'%>
+      <div class="section-background flex flex-col gap-2 p-5 w-full">
         <%= render 'review'%>
       </div>
     </div>

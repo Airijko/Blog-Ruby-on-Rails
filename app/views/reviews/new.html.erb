@@ -1,13 +1,28 @@
-<div class="border rounded-xl player-form p-5">
-  <%= form_for @post_form, url: reviews_new_path, html: { class: 'space-y-4' } do |f| %>
-    <div class="flex flex-col">
-      <%= f.label :description, class: 'font-bold text-lg mb-2' %>
-      <%= f.text_area :description, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
+<div class="flex justify-center w-full">
+  <div class=" max-w-xl border rounded-xl player-form p-5 ">
+    <div>test</div>
+    <div class="alert alert-danger">
+      <%= @review.errors[:summoner_name].join(", ") %>
     </div>
-    <div class="flex flex-col">
-      <%= f.label :tags, class: 'font-bold text-lg mb-2' %>
-      <%= f.text_field :tags, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
-    </div>
-    <%= f.submit 'Submit', class: 'mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700' %>
-  <% end %>
+    <div>test2</div>
+    <%= form_for @review, url: reviews_new_path, html: { class: 'space-y-4' } do |f| %>
+      <h1 class="text-5xl">Review a Player</h1>
+      <div class="flex flex-col">
+        <%= f.label :content, class: 'font-bold text-lg mb-2' %>
+        <%= f.text_area :content, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
+      </div>
+      <div class="flex flex-col">
+        <%= f.label "Summoner Name", class: 'font-bold text-lg mb-2' %>
+        <div class="flex flex-row">
+          <%= f.text_field :summoner_name, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
+          <%= f.text_field :summoner_tag, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <%= f.label "Your Username", class: 'font-bold text-lg mb-2' %>
+        <%= f.text_field :name, class: 'form-input mt-1 block w-full p-2 border border-gray-300 rounded-md' %>
+      </div>
+      <%= f.submit 'Submit', class: 'mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700' %>
+    <% end %>
+  </div>
 </div>

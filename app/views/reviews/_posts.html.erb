@@ -1,9 +1,9 @@
-<% @post_forms.each do |post_form| %>
+<% @reviews.each do |review| %>
   <div class="mt-4 mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="md:flex">
       <div class="p-8">
-        <h2 class="text-lg leading-tight font-medium text-black"><%= post_form.description %></h2>
-        <div class="mt-1 uppercase tracking-wide text-sm text-indigo-500 font-semibold"><%= post_form.tags %></div>
+        <h2 class="text-lg leading-tight font-medium text-black"><%= review.content %></h2>
+        <div class="mt-1 uppercase tracking-wide text-sm text-indigo-500 font-semibold"><%= review.summoner_name %></div>
       </div>
     </div>
   </div>

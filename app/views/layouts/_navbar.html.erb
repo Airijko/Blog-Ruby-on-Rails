@@ -1,8 +1,8 @@
-<nav class="fixed w-full px-5 bg-n-8/50 border-b border-gray-700 z-10">
+<nav class="sticky top-0 w-full px-5 bg-n-8/50 border-b border-gray-700 z-10">
   <div class="flex items-center justify-between h-16">
     <%= link_to root_path,class: 'flex flex-row justify-center items-center gap-2' do %>
       <%= image_tag('star.svg', class: 'h-[30px] w-auto') %>
-      <span class="font-bold text-3xl whitespace-nowrap">Rate That Player</span>
+      <span class="font-bold text-3xl whitespace-nowrap">All Chat</span>
     <% end %>
     <div class="flex flex-grow justify-center gap-12">
       <a href="/reviews" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Reviews</a>
@@ -10,7 +10,7 @@
       <a href="#" class="text-gray-300 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Discord</a>
     </div>
     <div class="flex flex-row gap-2 px-3 py-2 border bg-gray-900 rounded-2xl justify-center items-center hover:bg-blue-900 transition duration-200">
-      <%= form_tag('/auth/riot_games', method: 'post', data: {turbo: false}) do %>
+      <%= form_tag('/auth/developer', method: 'post', data: {turbo: false}) do %>
         <button type='submit'>Sign In</button>
       <% end %>
     </div>

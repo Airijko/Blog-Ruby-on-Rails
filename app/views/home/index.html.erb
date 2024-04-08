@@ -1,5 +1,5 @@
 <div class="home-background min-h-screen">
-  <div class="container flex flex-col justify-center items-center gap-20 my-[100px]">
+  <div class="container flex flex-col justify-center items-center gap-20 my-[50px]">
     <div class="flex flex-row items-center gap-5 w-3/5 mt-12">
       <div class="flex flex-col items-center whitespace-nowrap w-full gap-5 mt-auto">
         <div class="flex justify-between w-full">
@@ -14,12 +14,14 @@
       </div>
       <%= image_tag('Honor_Level_0.png', class: 'h-[200px] w-auto flex flex-grow  rounded-lg hover:scale-105 transition duration-200')%>
     </div>
-    <div class="flex flex-col justify-center lg:justify-start w-full gap-2">
-      <div class="flex flex-row justify-center lg:justify-start hover:scale-105 transition duration-200 gap-2 whitespace-nowrap">
-        <h1 class="text-3xl">Recent Player Reviews</h1>
-        <%= image_tag('pen-review.svg', class: 'h-[40px]') %>
+    <div class="flex flex-col w-full gap-2">
+      <div class="flex flex-row justify-center xl:justify-start">
+        <div class="flex flex-row gap-2 hover:scale-105 transition duration-200">
+          <h1 class="text-3xl">Recent Player Reviews</h1>
+          <%= image_tag('pen-review.svg', class: 'h-[40px]') %>
+        </div>
       </div>
-      <div class="flex flex-wrap justify-center lg:justify-between gap-5">
+      <div class="flex flex-wrap justify-center xl:justify-between gap-5">
         <%= render 'posts' %>
       </div>
     </div>

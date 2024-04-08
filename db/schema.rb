@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_05_092357) do
-  create_table "post_forms", force: :cascade do |t|
-    t.string "description"
-    t.string "tags"
+ActiveRecord::Schema[7.0].define(version: 2024_04_07_063310) do
+  create_table "reviews", force: :cascade do |t|
+    t.text "name"
+    t.text "content"
+    t.text "summoner_name"
+    t.integer "upvotes"
+    t.integer "downvotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "summoner_tag"
   end
 
   create_table "users", force: :cascade do |t|

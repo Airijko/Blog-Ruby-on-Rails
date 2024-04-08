@@ -1,16 +1,23 @@
-<div class="review-background h-[225px] p-7 rounded-2xl w-full">
-  <div class="flex items-center space-x-2 mb-4">
-    <%= image_tag('profile.svg', class: 'h-[48px] w-auto border border-amber-400 p-2') %>
-    <span class="font-medium">NULL</span>
-  </div>
-  <div class="flex flex-row w-full gap-2">
-    <div class="flex flex-col">
-      <p class="text-xs font-medium">TEXT</p>
-      <div class="flex mt-auto gap-2 justify-start sm text-amber-400 font-semibold">
-        <span>TAGGED USER</span>
-        <span>{STAR RATING}</span>
+<% if @reviews && !@reviews.empty? %>
+  <% @reviews.each do |review| %>
+    <div class="review-background h-[225px] p-7 rounded-2xl w-full">
+      <div class="flex items-center space-x-2 mb-4">
+        <%= image_tag('profile.svg', class: 'h-[48px] w-auto border border-amber-400 p-2') %>
+        <span class="font-medium"><%= review.name.presence || "Anonymous" %></span>
+      </div>
+      <div class="flex flex-row w-full gap-2">
+        <div class="flex flex-col">
+          <p class="text-xs font-medium text-wrap break-all overflow-hidden"><%= review.content %></p>
+          <div class="flex mt-auto gap-2 justify-start sm text-amber-400 font-semibold">
+            <span><%= review.summoner_name %></span>
+          </div>
+        </div>
+        <%= image_tag('empty_image.svg', class: 'h-[120px] w-auto border p-2 ml-auto') %>
       </div>
     </div>
-    <%= image_tag('empty_image.svg', class: 'h-[120px] w-auto border p-2 ml-auto float-right') %>
+  <% end %>
+<% else %>
+  <div class="flex justify-center items-center review-background h-[225px] p-7 rounded-2xl w-full">
+    <span>This Player has no reviews</span>
   </div>
-</div>
+<% end %>
